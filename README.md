@@ -1,4 +1,4 @@
-# motioncut_internship_Projectje
+# motioncut_internship_Project
 
 # Crafting an Elegant Pricing Page for the iPhone 15
 
