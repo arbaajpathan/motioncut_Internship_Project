@@ -1,114 +1,60 @@
-/* Custom CSS file */
-
-/* Color variables */
-:root {
-    --primary-color: #006c78;
-    --secondary-color: #2f3132;
-    --success-color: #12d23f;
-    --danger-color: #ff8692;
-    --warning-color: #b48b12;
-    --info-color: #015e6d;
-    --light-color: #f8f9fa;
-    --dark-color: #2369af;
-    --white-color: #ffffff;
-    --black-color: #000000;
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('BG.jpg') center/cover no-repeat;
+    height: 100vh;
 }
-
-/* Header section */
-.header {
-    background-color: var(--primary-color);
-    padding:10px;
-}
-
-.logo {
-    width: 50px;
-}
-
-/* Main section */
-.main {
-    padding: 40px;
-}
-
-.watch {
-    width: 200%;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-
-.price {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.currency {
-    font-size: 24px;
-    vertical-align: top;
-}
-
-.amount {
-    font-size: 36px;
-}
-
-.period {
-    font-size: 24px;
-    vertical-align: bottom;
-}
-
-.features {
-    margin-bottom: 20px;
-}
-
-.features ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.features li {
-    margin-bottom: 10px;
-}
-
-.options {
-    margin-bottom: 20px;
-}
-
-.options .form-group {
-    margin-bottom: 10px;
-}
-
-.action {
-    margin-bottom: 20px;
-}
-
-/* Footer section */
-.footer {
-    background-color: var(--secondary-color);
+form {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 20px;
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+    color: #fff;
+}
+h1 {
+    color: #f7f4f4;
+}
+input {
+    
+    color: aliceblue;
+    width: 80%;
+    padding: 8px;
+    background: #ffffff38;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: .3px solid #cccccc00;
+    border-radius: 4px;
+}
+::placeholder {
+    color: white;    
+}
+button {
+    background-color: #98999800;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ffffff00;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #77767600;
+    border: .3px solid #ffffffd6;
+}
+.info{
+    display: flex;
+    flex-direction: column;  
 }
 
-.copy {
-    color: var(--white-color);
-    font-size: 14px;
-}
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .title { font-size: 36px; }
-    .subtitle { font-size: 18px; }
-    .price { font-size: 24px; }
-    .currency { font-size: 18px; }
-    .amount { font-size: 24px; }
-    .period { font-size: 18px; }
-}
+

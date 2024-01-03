@@ -1,36 +1,37 @@
-# motioncut_internship_Project
+# Week 2 Task of creating Registration Form Webpage
 
-# Crafting an Elegant Pricing Page for the iPhone 15
+## Creating a Registration Form 
 
-## The Design
+![Registration Form Screenshot](https://github.com/AmanKadam-16/MotionCut_Internship/blob/Week_2/SnapShot.jpg)
 
-I wanted to create a *clean, modern, and visually appealing* pricing page to showcase the new iPhone 15. 
+## Design Choices
 
-The color palette aims for a *sleek, high-end look* using dark blues and greys contrasted with bright whites. I chose a large product image to highlight the phone's polished aesthetics. 
+I wanted to create an aesthetically pleasing registration form with a stylish glassmorphism design. Here were some of my key design choices:
 
-The layout focuses on drawing attention to the critical details - product name, tagline, price, features, customization options. I aligned these elements thoughtfully to optimize scannability.
-
-To enhance legibility, I used a *large, bold title* and *prominent call-to-action button*. 
+* Used a full background image with the form centered on top to create an immersive experience
+* Styled the form with glassmorphism using semi-transparent whites and blurred backdrop filters to give a slick look
+* Made the form glow subtly against the background using box shadows and borders
+* Used clean sans-serif fonts and gave elements bolding and coloring for good information hierarchy
 
 ## Features
 
-Some key features include:
+In terms of functionality, I included some standard registration form features:
 
-- *Dynamic pricing* based on plan, currency etc. using JavaScript
-- *Image swapper* to change the phone color using JavaScript
-- *Responsive design* adapting layout for mobile
-- Scroll-linked navigation menu
-- Clean HTML semantics 
+* :fontawesome-solid-user: Username field 
+* :fontawesome-solid-envelope: Email field
+* :fontawesome-solid-lock: Password field
+* :fontawesome-solid-check: Submit button
 
-I also implemented:
+I made sure to:
 
-- Bootstrap for responsive grid and styling
-- jQuery for DOM manipulation
-- Local fonts and icon packs for extra polish
+* Use appropriate input types like email and password 
+* Add the `required` attribute for validation
+* Give inputs placeholder text as hints for users
 
 ## Challenges
 
-- Getting the dynamic JavaScript pricing logic right took some iteration. 
-- Tweaking the responsive breakpoints to optimize mobile experience.
-- Balancing imagery, content density and white space.
-- Cross-browser compatibility fixing display quirks.
+Some challenges I ran into:
+
+* Getting the glassmorphism styling right - took some tweaking with transparencies  
+* Centering the form perfectly on all screen sizes - flexbox saved the day
+* Restricting the background image from scrolling - used `height: 100vh`
