@@ -1,0 +1,177 @@
+/* style.css */
+/* style.css */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.search {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search input {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.search button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons a {
+  margin: 0 10px;
+}
+
+.icons a img {
+  width: 30px;
+  height: 30px;
+}
+
+.product-page {
+  margin: 20px 0;
+  display: flex;
+}
+
+.product-image {
+  width: 50%;
+}
+
+.product-image img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-info {
+  width: 50%;
+  padding: 20px;
+}
+
+.product-name {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #333;
+  padding: 10px;
+  margin-top: auto;
+
+}
+
+.footer-text {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .menu {
+      display: none;
+  }
+
+  .search {
+      margin: 10px 0;
+  }
+
+  .product-page {
+      flex-direction: column;
+  }
+
+  .product-image, .product-info {
+      width: 50%;
+  }
+}
