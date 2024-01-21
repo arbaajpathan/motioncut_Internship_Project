@@ -1,116 +1,122 @@
-// Custom JS file
-
 // Get the elements from the document
-var plan = document.getElementById("plan");
-var color = document.getElementById("color");
-var size = document.getElementById("size");
-var currency = document.getElementById("currency");
-var unit = document.getElementById("unit");
-var price = document.getElementsByClassName("price")[0];
-var watch = document.getElementsByClassName("watch")[0];
+const taskInput = document.getElementById("task");
+const addButton = document.getElementById("add");
+const list = document.getElementById("list");
 
-// Define the exchange rates and the unit conversions
-var rates = {
-    usd: 1,
-    eur: 0.85,
-    inr: 74.23,
-    gbp: 0.73,
-    cny: 6.47
-};
+// Initialize an array to store the tasks
+let tasks = [];
 
-var units = {
-    metric: {
-        heart: "bpm",
-        blood: "mmHg",
-        oxygen: "%",
-        distance: "km",
-        speed: "km/h"
-    },
-    imperial: {
-        heart: "bpm",
-        blood: "inHg",
-        oxygen: "%",
-        distance: "mi",
-        speed: "mph"
+// Load the tasks from the local storage
+function loadTasks() {
+  // Get the tasks from the local storage
+  const storedTasks = localStorage.getItem("tasks");
+
+  // If there are any tasks, parse them and assign them to the tasks array
+  if (storedTasks) {
+    tasks = JSON.parse(storedTasks);
+  }
+
+  // Render the tasks on the list
+  renderTasks();
+}
+
+// Save the tasks to the local storage
+function saveTasks() {
+  // Stringify the tasks array and store it in the local storage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Render the tasks on the list
+function renderTasks() {
+  // Clear the list
+  list.innerHTML = "";
+
+  // Loop through the tasks array
+  for (let i = 0; i < tasks.length; i++) {
+    // Get the current task object
+    const task = tasks[i];
+
+    // Create a list item element
+    const li = document.createElement("li");
+
+    // Create a checkbox input element
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.completed;
+
+    // Add an event listener to the checkbox
+    checkbox.addEventListener("change", function () {
+      // Toggle the completed property of the task object
+      task.completed = !task.completed;
+
+      // Save the tasks to the local storage
+      saveTasks();
+
+      // Render the tasks on the list
+      renderTasks();
+    });
+
+    // Create a span element to display the task text
+    const span = document.createElement("span");
+    span.textContent = task.text;
+
+    // Create a button element to delete the task
+    const button = document.createElement("button");
+    button.textContent = "Delete";
+
+    // Add an event listener to the button
+    button.addEventListener("click", function () {
+      // Remove the task from the tasks array
+      tasks.splice(i, 1);
+
+      // Save the tasks to the local storage
+      saveTasks();
+
+      // Render the tasks on the list
+      renderTasks();
+    });
+
+    // Append the elements to the list item
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(button);
+
+    // Add a class to the list item if the task is completed
+    if (task.completed) {
+      li.classList.add("completed");
     }
-};
 
-// Define the function to update the price based on the plan and the currency
-function updatePrice() {
-    // Get the values of the plan and the currency
-    var planValue = plan.value;
-    var currencyValue = currency.value;
-    // Get the elements of the price
-    var currencySymbol = price.getElementsByClassName("currency")[0];
-    var amount = price.getElementsByClassName("amount")[0];
-    var period = price.getElementsByClassName("period")[0];
-    // Define the base price for the monthly plan in USD
-    var basePrice = 199;
-    // Calculate the price based on the plan and the currency
-    var newPrice = basePrice * (planValue === "monthly" ? 1 : 10) * rates[currencyValue];
-    // Round the price to two decimal places
-    newPrice = newPrice.toFixed(2);
-    // Update the price elements
-    currencySymbol.textContent = currencyValue.toUpperCase();
-    amount.textContent = newPrice;
-    period.textContent = planValue === "monthly" ? "/month" : "/year";
+    // Append the list item to the list
+    list.appendChild(li);
+  }
 }
 
-// Define the function to update the watch image based on the color and the size
-function updateWatch() {
-    // Get the values of the color and the size
-    var colorValue = color.value;
-    // var sizeValue = size.value;
-    // Define the base image name for the watch
-    var baseImage = "";
-    // Use a switch statement to assign the image name based on the color value
-    switch (colorValue) {
-        case "black":
-            baseImage = "apple";
-            break;
-        case "w":
-            baseImage = "W";
-            break;
-        case "t":
-            baseImage = "tt";
-            break;
-        default:
-            baseImage = "watch";
-    }
-    // Append the size to the image name
-    // baseImage += "-" + sizeValue;
-    // Add the image extension
-    baseImage += ".png";
-    // Update the watch image source
-    watch.src = baseImage;
-}
+// Add an event listener to the add button
+addButton.addEventListener("click", function () {
+  // Get the task text from the input
+  const taskText = taskInput.value;
 
-// Define the function to update the unit labels based on the unit
-function updateUnit() {
-    // Get the value of the unit
-    var unitValue = unit.value;
-    // Get the elements of the unit labels
-    var heartLabel = document.getElementById("heart-label");
-    var bloodLabel = document.getElementById("blood-label");
-    var oxygenLabel = document.getElementById("oxygen-label");
-    var distanceLabel = document.getElementById("distance-label");
-    var speedLabel = document.getElementById("speed-label");
-    // Update the unit labels with the corresponding unit
-    heartLabel.textContent = units[unitValue].heart;
-    bloodLabel.textContent = units[unitValue].blood;
-    oxygenLabel.textContent = units[unitValue].oxygen;
-    distanceLabel.textContent = units[unitValue].distance;
-    speedLabel.textContent = units[unitValue].speed;
-}
+  // If the task text is not empty
+  if (taskText) {
+    // Create a new task object
+    const task = {
+      text: taskText,
+      completed: false,
+    };
 
-// Add event listeners to the select elements to update the page dynamically
-plan.addEventListener("change", updatePrice);
-color.addEventListener("change", updateWatch);
-size.addEventListener("change", updateWatch);
-currency.addEventListener("change", updatePrice);
-unit.addEventListener("change", updateUnit);
+    // Add the task to the tasks array
+    tasks.push(task);
 
-// Call the update functions initially to set the default values
-updatePrice();
-updateWatch();
-updateUnit();
+    // Save the tasks to the local storage
+    saveTasks();
+
+    // Render the tasks on the list
+    renderTasks();
+
+    // Clear the input
+    taskInput.value = "";
+  }
+});
+
+// Load the tasks from the local storage when the page loads
+loadTasks();

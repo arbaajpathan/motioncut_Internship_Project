@@ -1,36 +1,18 @@
-# motioncut_internship_Project
+# Week 4 Task of Motioncut Internship.
 
-# Crafting an Elegant Pricing Page for the iPhone 15
+## Creating a To Do List WebApp.
 
-## The Design
-
-I wanted to create a *clean, modern, and visually appealing* pricing page to showcase the new iPhone 15. 
-
-The color palette aims for a *sleek, high-end look* using dark blues and greys contrasted with bright whites. I chose a large product image to highlight the phone's polished aesthetics. 
-
-The layout focuses on drawing attention to the critical details - product name, tagline, price, features, customization options. I aligned these elements thoughtfully to optimize scannability.
-
-To enhance legibility, I used a *large, bold title* and *prominent call-to-action button*. 
+![WebApp Screenshot](https://github.com/AmanKadam-16/AmanKadam-16.github.io/blob/main/SnapShot.png)
 
 ## Features
+- Add Task
+- Mark as Complete/Incomplete
+- Delete the completed Task.
 
-Some key features include:
+## Theme - Minimalistic
+- Dark Grey Color Pallete
+- Inspired from Call of Duty Ghost.
 
-- *Dynamic pricing* based on plan, currency etc. using JavaScript
-- *Image swapper* to change the phone color using JavaScript
-- *Responsive design* adapting layout for mobile
-- Scroll-linked navigation menu
-- Clean HTML semantics 
+## Background Designed through Figma.
 
-I also implemented:
-
-- Bootstrap for responsive grid and styling
-- jQuery for DOM manipulation
-- Local fonts and icon packs for extra polish
-
-## Challenges
-
-- Getting the dynamic JavaScript pricing logic right took some iteration. 
-- Tweaking the responsive breakpoints to optimize mobile experience.
-- Balancing imagery, content density and white space.
-- Cross-browser compatibility fixing display quirks.
+[Take me to the WebApp](https://amankadam-16.github.io/).
