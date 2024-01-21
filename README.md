@@ -2,8 +2,6 @@
 
 ## Creating a To Do List WebApp.
 
-![WebApp Screenshot](https://github.com/AmanKadam-16/AmanKadam-16.github.io/blob/main/SnapShot.png)
-
 ## Features
 - Add Task
 - Mark as Complete/Incomplete
@@ -15,4 +13,3 @@
 
 ## Background Designed through Figma.
 
-[Take me to the WebApp](https://amankadam-16.github.io/).
