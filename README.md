@@ -9,7 +9,7 @@
 
 ## Theme - Minimalistic
 - Dark Grey Color Pallete
-- Inspired from Call of Duty Ghost.
+- Inspired from Batman.
 
 ## Background Designed through Figma.
 
